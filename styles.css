@@ -143,8 +143,7 @@ body::before {
   list-style: none;
 }
 
-.schedule-item + .schedule-item,
-.video-item + .video-item {
+.schedule-item + .schedule-item {
   margin-top: 14px;
 }
 
@@ -180,13 +179,6 @@ body::before {
   border-top: 1px solid rgba(74, 53, 32, 0.14);
 }
 
-.resource-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 16px;
-}
-
 .note-text {
   margin-top: 0;
   padding: 18px 20px;
@@ -200,13 +192,15 @@ body::before {
 
 .video-list,
 .resource-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 14px 18px;
   margin-top: 14px;
 }
 
 .video-item {
+  display: block;
   text-decoration: none;
 }
 
@@ -214,7 +208,7 @@ body::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: min(100%, 320px);
+  width: 100%;
   min-height: 58px;
   padding: 14px 20px;
   color: var(--accent-dark);
@@ -259,6 +253,12 @@ body::before {
     left: 22px;
     right: 22px;
   }
+
+  .video-list,
+  .resource-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
 @media (max-width: 560px) {
@@ -276,7 +276,4 @@ body::before {
     right: 18px;
   }
 
-  .link-button {
-    width: 100%;
-  }
 }
