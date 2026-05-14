@@ -12,84 +12,26 @@
 </head>
 <body>
   <div class="page-shell">
-    <header class="hero">
-      <p class="eyebrow">Summer Bridge 2026</p>
-      <h1>26暑假衔接学习计划</h1>
-      <p class="hero-copy">
-        把 C++ 与高等数学上册的学习安排整理成一个清晰、可直接部署到 GitHub Pages 的静态网页。
-      </p>
-      <div class="hero-meta">
-        <div>
-          <span class="meta-label">课程数量</span>
-          <strong>2 门</strong>
-        </div>
-        <div>
-          <span class="meta-label">学习轮次</span>
-          <strong>2 轮</strong>
-        </div>
-        <div>
-          <span class="meta-label">页面类型</span>
-          <strong>静态 HTML</strong>
-        </div>
-      </div>
-    </header>
-
     <main>
-      <section class="panel intro-panel">
-        <div>
-          <p class="section-tag">使用说明</p>
-          <h2>按学科切换，按轮次查看</h2>
-        </div>
-        <p class="intro-copy">
-          页面按学科分区展示，每个卡片对应一段学习日程。高数部分额外整理了配套视频，点击即可跳转学习。
-        </p>
-      </section>
-
       <section class="tabs" aria-label="学科切换">
         <button class="tab-button is-active" type="button" data-target="cpp-panel">C++</button>
         <button class="tab-button" type="button" data-target="math-panel">高等数学上册</button>
       </section>
 
       <section id="cpp-panel" class="subject-panel is-active" aria-labelledby="cpp-heading">
-        <div class="panel subject-header">
-          <div>
-            <p class="section-tag">Programming</p>
-            <h2 id="cpp-heading">C++ 学习安排</h2>
-          </div>
-          <p class="subject-copy">
-            以教材章节推进为主，配合视频资源进行补充。建议优先完成轮次主线，再根据薄弱点回看视频。
-          </p>
-        </div>
+        <h1 id="cpp-heading" class="subject-title">C++</h1>
         <div id="cpp-rounds" class="round-grid"></div>
-        <section class="panel resource-panel">
-          <div class="resource-heading">
-            <p class="section-tag">参考资源</p>
-            <h3>教材与视频</h3>
-          </div>
-          <div class="resource-note">
-            <p>建议主要参考教材：<strong>C++语言程序设计（第5版）</strong>，郑莉、董渊编著。</p>
-          </div>
+        <section class="resource-panel">
+          <h2 class="resource-title">参考资源</h2>
           <div id="cpp-resources" class="resource-list"></div>
         </section>
       </section>
 
       <section id="math-panel" class="subject-panel" aria-labelledby="math-heading">
-        <div class="panel subject-header">
-          <div>
-            <p class="section-tag">Mathematics</p>
-            <h2 id="math-heading">高等数学上册学习安排</h2>
-          </div>
-          <p class="subject-copy">
-            以专题串联知识点，覆盖极限、导数、积分与微分方程，并附上对应视频资源方便快速查漏补缺。
-          </p>
-        </div>
+        <h1 id="math-heading" class="subject-title">高等数学上册</h1>
         <div id="math-rounds" class="round-grid"></div>
       </section>
     </main>
-
-    <footer class="footer">
-      <p>适合直接部署到 GitHub Pages。后续如果要继续加学科，只需要补充数据即可。</p>
-    </footer>
   </div>
 
   <script src="script.js"></script>

@@ -50,30 +50,7 @@ body::before {
 .page-shell {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 32px 0 56px;
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  border-radius: calc(var(--radius-lg) + 8px);
-  background:
-    linear-gradient(135deg, rgba(255, 247, 234, 0.96), rgba(247, 236, 218, 0.82)),
-    linear-gradient(120deg, rgba(184, 77, 31, 0.08), rgba(29, 103, 99, 0.08));
-  box-shadow: var(--shadow);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  right: -48px;
-  top: -48px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(184, 77, 31, 0.24), transparent 70%);
+  padding: 32px 0 40px;
 }
 
 .eyebrow,
@@ -86,87 +63,28 @@ body::before {
   text-transform: uppercase;
 }
 
-.hero h1,
-.subject-header h2,
-.intro-panel h2,
-.resource-panel h3 {
+.subject-title,
+.resource-title,
+.round-card h3 {
   margin: 0;
   font-family: "Noto Serif SC", serif;
   font-weight: 700;
 }
 
-.hero h1 {
-  max-width: 8em;
-  font-size: clamp(2.5rem, 5vw, 4.4rem);
-  line-height: 1.06;
-}
-
-.hero-copy,
-.subject-copy,
-.intro-copy,
-.resource-note p,
-.footer p {
-  color: var(--muted);
-  line-height: 1.75;
-}
-
-.hero-copy {
-  max-width: 720px;
-  margin: 18px 0 0;
-  font-size: 1.08rem;
-}
-
-.hero-meta {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 28px;
-}
-
-.hero-meta div,
 .panel,
 .round-card,
 .video-item {
   backdrop-filter: blur(10px);
 }
 
-.hero-meta div {
-  padding: 18px 20px;
-  border: 1px solid rgba(125, 47, 16, 0.12);
-  border-radius: var(--radius-md);
-  background: rgba(255, 252, 247, 0.6);
-}
-
-.meta-label {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
 main {
-  margin-top: 28px;
-}
-
-.panel {
-  padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: var(--panel);
-  box-shadow: var(--shadow);
-}
-
-.intro-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
-  gap: 28px;
-  align-items: center;
+  padding-top: 8px;
 }
 
 .tabs {
   display: inline-flex;
   gap: 10px;
-  margin: 26px 0 18px;
+  margin: 0 0 22px;
   padding: 8px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -207,16 +125,9 @@ main {
   display: block;
 }
 
-.subject-header {
-  display: grid;
-  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
-  gap: 24px;
-  margin-bottom: 20px;
-}
-
-.subject-header h2,
-.intro-panel h2 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+.subject-title {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .round-grid {
@@ -235,7 +146,6 @@ main {
 
 .round-card h3 {
   margin: 0 0 18px;
-  font-family: "Noto Serif SC", serif;
   font-size: 1.5rem;
 }
 
@@ -280,26 +190,15 @@ main {
   margin-top: 20px;
 }
 
-.resource-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.resource-note {
-  margin: 18px 0 0;
-  padding: 16px 18px;
-  border-radius: var(--radius-md);
-  background: rgba(184, 77, 31, 0.08);
-  border: 1px solid rgba(184, 77, 31, 0.12);
+.resource-title {
+  margin-bottom: 14px;
+  font-size: 1.35rem;
 }
 
 .resource-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-  margin-top: 18px;
 }
 
 .video-item {
@@ -338,11 +237,6 @@ main {
   font-weight: 600;
 }
 
-.footer {
-  padding: 18px 4px 0;
-  text-align: center;
-}
-
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -355,22 +249,13 @@ main {
 }
 
 @media (max-width: 860px) {
-  .hero,
-  .panel,
   .round-card {
     padding: 22px;
   }
 
-  .hero-meta,
-  .intro-panel,
-  .subject-header,
   .round-grid,
   .resource-list {
     grid-template-columns: 1fr;
-  }
-
-  .resource-heading {
-    display: block;
   }
 }
 
@@ -378,10 +263,6 @@ main {
   .page-shell {
     width: min(100% - 20px, 1180px);
     padding-top: 18px;
-  }
-
-  .hero h1 {
-    max-width: none;
   }
 
   .tabs {
