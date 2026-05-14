@@ -1,6 +1,5 @@
 const studyData = {
   cpp: {
-    divider: "\\----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
     note: "【注】可根据以下两个链接根据需要和对应进度来学习，建议主要看书（C++语言程序设计 (第5版) 郑莉 董渊 编著  ）；",
     rounds: [
       {
@@ -109,8 +108,7 @@ function renderRounds(containerId, rounds, showVideos) {
               <div class="video-list">
                 ${item.videos.map((video) => `
                   <a class="video-item" href="${normalizeUrl(video.urlText)}" target="_blank" rel="noreferrer">
-                    <p class="video-title">${video.title}</p>
-                    <p class="video-url">${video.urlText}</p>
+                    <span class="link-button">${video.title}</span>
                   </a>
                 `).join("")}
               </div>
@@ -126,8 +124,7 @@ function renderResources(containerId, resources) {
   const container = document.getElementById(containerId);
   container.innerHTML = resources.map((resource) => `
     <a class="video-item" href="${normalizeUrl(resource.urlText)}" target="_blank" rel="noreferrer">
-      <p class="video-title">${resource.title}</p>
-      <p class="video-url">${resource.urlText}</p>
+      <span class="link-button">${resource.title}</span>
     </a>
   `).join("");
 }
@@ -135,5 +132,4 @@ function renderResources(containerId, resources) {
 renderRounds("cpp-rounds", studyData.cpp.rounds, false);
 renderResources("cpp-resources", studyData.cpp.resources);
 renderRounds("math-rounds", studyData.math.rounds, true);
-document.getElementById("cpp-divider").textContent = studyData.cpp.divider;
 document.getElementById("cpp-note").textContent = studyData.cpp.note;
