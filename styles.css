@@ -48,86 +48,42 @@ body::before {
 }
 
 .page-shell {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 32px 0 40px;
-}
-
-.eyebrow,
-.section-tag {
-  margin: 0 0 10px;
-  color: var(--accent-dark);
-  letter-spacing: 0.16em;
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  padding: 36px 0 56px;
 }
 
 .subject-title,
-.resource-title,
 .round-card h3 {
   margin: 0;
   font-family: "Noto Serif SC", serif;
   font-weight: 700;
 }
 
-.panel,
+.study-section,
 .round-card,
 .video-item {
   backdrop-filter: blur(10px);
 }
 
-main {
-  padding-top: 8px;
+.study-layout {
+  display: grid;
+  gap: 34px;
 }
 
-.tabs {
-  display: inline-flex;
-  gap: 10px;
-  margin: 0 0 22px;
-  padding: 8px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 248, 237, 0.82);
+.study-section {
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg, rgba(255, 249, 241, 0.92), rgba(249, 239, 222, 0.84));
   box-shadow: var(--shadow);
 }
 
-.tab-button {
-  border: 0;
-  padding: 12px 22px;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--muted);
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
-}
-
-.tab-button:hover,
-.tab-button:focus-visible {
-  color: var(--accent-dark);
-  transform: translateY(-1px);
-  outline: none;
-}
-
-.tab-button.is-active {
-  background: linear-gradient(135deg, var(--accent) 0%, #d46d29 100%);
-  color: #fff9f3;
-}
-
-.subject-panel {
-  display: none;
-  animation: rise-in 0.45s ease;
-}
-
-.subject-panel.is-active {
-  display: block;
-}
-
 .subject-title {
-  margin-bottom: 18px;
-  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 22px;
+  font-size: clamp(2.1rem, 4vw, 3.3rem);
+  line-height: 1.08;
 }
 
 .round-grid {
@@ -140,12 +96,13 @@ main {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: var(--panel-strong);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(252, 244, 233, 0.9));
   box-shadow: var(--shadow);
 }
 
 .round-card h3 {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   font-size: 1.5rem;
 }
 
@@ -162,43 +119,57 @@ main {
 }
 
 .schedule-item {
-  padding: 14px 16px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 252, 247, 0.84);
-  border: 1px solid rgba(74, 53, 32, 0.08);
+  padding: 16px 0 0;
+  border-top: 1px solid rgba(74, 53, 32, 0.09);
 }
 
-.day-badge {
-  display: inline-flex;
-  margin-bottom: 10px;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: rgba(29, 103, 99, 0.1);
-  color: var(--teal);
-  font-size: 0.86rem;
-  font-weight: 700;
+.schedule-item:first-child {
+  padding-top: 0;
+  border-top: 0;
 }
 
-.topic-title {
+.schedule-line,
+.video-title,
+.video-url,
+.note-text,
+.separator-text {
   margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.schedule-line {
+  color: var(--text);
   font-size: 1rem;
   font-weight: 600;
-  line-height: 1.6;
+  line-height: 1.75;
 }
 
 .resource-panel {
-  margin-top: 20px;
-}
-
-.resource-title {
-  margin-bottom: 14px;
-  font-size: 1.35rem;
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(74, 53, 32, 0.14);
 }
 
 .resource-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+  margin-top: 16px;
+}
+
+.separator-text {
+  color: rgba(125, 47, 16, 0.55);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+}
+
+.note-text {
+  margin-top: 16px;
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 0.98rem;
 }
 
 .video-item {
@@ -220,21 +191,18 @@ main {
   outline: none;
 }
 
-.video-tag {
-  display: inline-flex;
-  margin-bottom: 10px;
-  color: var(--accent-dark);
-  font-size: 0.84rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .video-title {
-  margin: 0;
-  line-height: 1.65;
+  color: var(--text);
+  line-height: 1.7;
   font-size: 1rem;
   font-weight: 600;
+}
+
+.video-url {
+  margin-top: 10px;
+  color: var(--accent-dark);
+  line-height: 1.6;
+  font-size: 0.9rem;
 }
 
 @keyframes rise-in {
@@ -249,6 +217,7 @@ main {
 }
 
 @media (max-width: 860px) {
+  .study-section,
   .round-card {
     padding: 22px;
   }
@@ -265,13 +234,7 @@ main {
     padding-top: 18px;
   }
 
-  .tabs {
-    display: flex;
-    width: 100%;
-  }
-
-  .tab-button {
-    flex: 1;
-    text-align: center;
+  .study-section {
+    padding: 18px;
   }
 }
